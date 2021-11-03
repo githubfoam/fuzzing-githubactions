@@ -1,9 +1,12 @@
-name: "ubuntu bash packages CI workflow"
+name: "ubuntu bash fuzzing CI workflow"
 
 
 on:
   push:
-    branches: [ test ]
+    branches: [ main ]
+  schedule:
+      - cron:  '0 0 1 * *' ##execution of a task in the first minute of the month  
+
 
 jobs:
 
