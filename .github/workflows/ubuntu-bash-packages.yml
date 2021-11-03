@@ -1,0 +1,20 @@
+name: "ubuntu bash packages CI workflow"
+
+
+on:
+  push:
+    branches: [ test ]
+
+jobs:
+
+     
+
+  ubuntu-latest-radamsa-job:
+    name: "radamsa on ubuntu-latest"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: "os fingerprinting"
+      run: hostnamectl status    
+    - name: "deploy radamsa"
+      run: sudo make deploy-radamsa
